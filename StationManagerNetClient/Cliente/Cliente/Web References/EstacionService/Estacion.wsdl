@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://master" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://master" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://master">
+      <xs:element name="log">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="UTC" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="operacion" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="elemento" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="logResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="suscribirAEstacion">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="puerto" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="prop" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="min" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="max" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="suscribirAEstacionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setEncriptado">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="encriptado" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getLuminosidad">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getLuminosidadResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setLuminosidad">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="luminosidad" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="encript" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setLuminosidadResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getHumedad">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getHumedadResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setHumedad">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="humedad" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="encript" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setHumedadResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setTemperatura">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="temperatura" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="encript" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setTemperaturaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPantalla">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPantallaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTemperatura">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTemperaturaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setPantalla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pantalla" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="encript" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setPantallaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Main">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="args" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="setPantallaRequest">
+    <wsdl:part name="parameters" element="ns:setPantalla" />
+  </wsdl:message>
+  <wsdl:message name="setPantallaResponse">
+    <wsdl:part name="parameters" element="ns:setPantallaResponse" />
+  </wsdl:message>
+  <wsdl:message name="logRequest">
+    <wsdl:part name="parameters" element="ns:log" />
+  </wsdl:message>
+  <wsdl:message name="logResponse">
+    <wsdl:part name="parameters" element="ns:logResponse" />
+  </wsdl:message>
+  <wsdl:message name="setTemperaturaRequest">
+    <wsdl:part name="parameters" element="ns:setTemperatura" />
+  </wsdl:message>
+  <wsdl:message name="setTemperaturaResponse">
+    <wsdl:part name="parameters" element="ns:setTemperaturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHumedadRequest">
+    <wsdl:part name="parameters" element="ns:getHumedad" />
+  </wsdl:message>
+  <wsdl:message name="getHumedadResponse">
+    <wsdl:part name="parameters" element="ns:getHumedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="setLuminosidadRequest">
+    <wsdl:part name="parameters" element="ns:setLuminosidad" />
+  </wsdl:message>
+  <wsdl:message name="setLuminosidadResponse">
+    <wsdl:part name="parameters" element="ns:setLuminosidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLuminosidadRequest">
+    <wsdl:part name="parameters" element="ns:getLuminosidad" />
+  </wsdl:message>
+  <wsdl:message name="getLuminosidadResponse">
+    <wsdl:part name="parameters" element="ns:getLuminosidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPantallaRequest">
+    <wsdl:part name="parameters" element="ns:getPantalla" />
+  </wsdl:message>
+  <wsdl:message name="getPantallaResponse">
+    <wsdl:part name="parameters" element="ns:getPantallaResponse" />
+  </wsdl:message>
+  <wsdl:message name="setEncriptadoRequest">
+    <wsdl:part name="parameters" element="ns:setEncriptado" />
+  </wsdl:message>
+  <wsdl:message name="getTemperaturaRequest">
+    <wsdl:part name="parameters" element="ns:getTemperatura" />
+  </wsdl:message>
+  <wsdl:message name="getTemperaturaResponse">
+    <wsdl:part name="parameters" element="ns:getTemperaturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="suscribirAEstacionRequest">
+    <wsdl:part name="parameters" element="ns:suscribirAEstacion" />
+  </wsdl:message>
+  <wsdl:message name="suscribirAEstacionResponse">
+    <wsdl:part name="parameters" element="ns:suscribirAEstacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="setHumedadRequest">
+    <wsdl:part name="parameters" element="ns:setHumedad" />
+  </wsdl:message>
+  <wsdl:message name="setHumedadResponse">
+    <wsdl:part name="parameters" element="ns:setHumedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="MainRequest">
+    <wsdl:part name="parameters" element="ns:Main" />
+  </wsdl:message>
+  <wsdl:portType name="EstacionPortType">
+    <wsdl:operation name="setPantalla">
+      <wsdl:input wsaw:Action="urn:setPantalla" message="ns:setPantallaRequest" />
+      <wsdl:output wsaw:Action="urn:setPantallaResponse" message="ns:setPantallaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="log">
+      <wsdl:input wsaw:Action="urn:log" message="ns:logRequest" />
+      <wsdl:output wsaw:Action="urn:logResponse" message="ns:logResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setTemperatura">
+      <wsdl:input wsaw:Action="urn:setTemperatura" message="ns:setTemperaturaRequest" />
+      <wsdl:output wsaw:Action="urn:setTemperaturaResponse" message="ns:setTemperaturaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getHumedad">
+      <wsdl:input wsaw:Action="urn:getHumedad" message="ns:getHumedadRequest" />
+      <wsdl:output wsaw:Action="urn:getHumedadResponse" message="ns:getHumedadResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setLuminosidad">
+      <wsdl:input wsaw:Action="urn:setLuminosidad" message="ns:setLuminosidadRequest" />
+      <wsdl:output wsaw:Action="urn:setLuminosidadResponse" message="ns:setLuminosidadResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getLuminosidad">
+      <wsdl:input wsaw:Action="urn:getLuminosidad" message="ns:getLuminosidadRequest" />
+      <wsdl:output wsaw:Action="urn:getLuminosidadResponse" message="ns:getLuminosidadResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPantalla">
+      <wsdl:input wsaw:Action="urn:getPantalla" message="ns:getPantallaRequest" />
+      <wsdl:output wsaw:Action="urn:getPantallaResponse" message="ns:getPantallaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setEncriptado">
+      <wsdl:input wsaw:Action="urn:setEncriptado" message="ns:setEncriptadoRequest" />
+    </wsdl:operation>
+    <wsdl:operation name="getTemperatura">
+      <wsdl:input wsaw:Action="urn:getTemperatura" message="ns:getTemperaturaRequest" />
+      <wsdl:output wsaw:Action="urn:getTemperaturaResponse" message="ns:getTemperaturaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="suscribirAEstacion">
+      <wsdl:input wsaw:Action="urn:suscribirAEstacion" message="ns:suscribirAEstacionRequest" />
+      <wsdl:output wsaw:Action="urn:suscribirAEstacionResponse" message="ns:suscribirAEstacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setHumedad">
+      <wsdl:input wsaw:Action="urn:setHumedad" message="ns:setHumedadRequest" />
+      <wsdl:output wsaw:Action="urn:setHumedadResponse" message="ns:setHumedadResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Main">
+      <wsdl:input wsaw:Action="urn:Main" message="ns:MainRequest" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EstacionSoap11Binding" type="ns:EstacionPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setPantalla">
+      <soap:operation soapAction="urn:setPantalla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="log">
+      <soap:operation soapAction="urn:log" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTemperatura">
+      <soap:operation soapAction="urn:setTemperatura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHumedad">
+      <soap:operation soapAction="urn:getHumedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLuminosidad">
+      <soap:operation soapAction="urn:setLuminosidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLuminosidad">
+      <soap:operation soapAction="urn:getLuminosidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPantalla">
+      <soap:operation soapAction="urn:getPantalla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setEncriptado">
+      <soap:operation soapAction="urn:setEncriptado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getTemperatura">
+      <soap:operation soapAction="urn:getTemperatura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suscribirAEstacion">
+      <soap:operation soapAction="urn:suscribirAEstacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setHumedad">
+      <soap:operation soapAction="urn:setHumedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Main">
+      <soap:operation soapAction="urn:Main" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EstacionSoap12Binding" type="ns:EstacionPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setPantalla">
+      <soap12:operation soapAction="urn:setPantalla" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="log">
+      <soap12:operation soapAction="urn:log" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTemperatura">
+      <soap12:operation soapAction="urn:setTemperatura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHumedad">
+      <soap12:operation soapAction="urn:getHumedad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLuminosidad">
+      <soap12:operation soapAction="urn:setLuminosidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLuminosidad">
+      <soap12:operation soapAction="urn:getLuminosidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPantalla">
+      <soap12:operation soapAction="urn:getPantalla" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setEncriptado">
+      <soap12:operation soapAction="urn:setEncriptado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getTemperatura">
+      <soap12:operation soapAction="urn:getTemperatura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suscribirAEstacion">
+      <soap12:operation soapAction="urn:suscribirAEstacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setHumedad">
+      <soap12:operation soapAction="urn:setHumedad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Main">
+      <soap12:operation soapAction="urn:Main" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EstacionHttpBinding" type="ns:EstacionPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="setPantalla">
+      <http:operation location="setPantalla" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="log">
+      <http:operation location="log" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTemperatura">
+      <http:operation location="setTemperatura" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHumedad">
+      <http:operation location="getHumedad" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLuminosidad">
+      <http:operation location="setLuminosidad" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLuminosidad">
+      <http:operation location="getLuminosidad" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPantalla">
+      <http:operation location="getPantalla" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setEncriptado">
+      <http:operation location="setEncriptado" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getTemperatura">
+      <http:operation location="getTemperatura" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suscribirAEstacion">
+      <http:operation location="suscribirAEstacion" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setHumedad">
+      <http:operation location="setHumedad" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Main">
+      <http:operation location="Main" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Estacion">
+    <wsdl:port name="EstacionHttpSoap11Endpoint" binding="ns:EstacionSoap11Binding">
+      <soap:address location="http://localhost:8080/EstacionMaster/services/Estacion.EstacionHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="EstacionHttpSoap12Endpoint" binding="ns:EstacionSoap12Binding">
+      <soap12:address location="http://localhost:8080/EstacionMaster/services/Estacion.EstacionHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="EstacionHttpEndpoint" binding="ns:EstacionHttpBinding">
+      <http:address location="http://localhost:8080/EstacionMaster/services/Estacion.EstacionHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

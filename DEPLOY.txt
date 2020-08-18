@@ -1,0 +1,15 @@
+
+1-Activate juddi server in a specific port in one machine.
+
+2-Start stations (with tomcat) each one with a port on tomcat, put in datos.txt, log.txt and register them with juddi (ManejarEstacionLocal.exe).
+
+3-In client machine run the service Subscribe in order to subscribe to the stations. This service
+makes possible to receive notifications if some station activates a specified threshold.
+
+4-Use the Cliente.exe in client machine in order to connect to the JUDDI server and read all stations.  Firstly, you will need
+to log in with an user and a password. The specified user is saved in the usuarios.txt (default is admin and 1234). Then, it is required
+to access to the configuration popup to indicate the Subscribe port and the ip of the client itself. 
+
+5- Connect to the JUDDI server. If this connection is succesfull it is possible to see all stations and the values
+from each station. Moreover, it is possible to modify the values itself. Furthermore, the comunication between
+client and station can be encripted. Finally, it is possible to subscribe to a station and receive a notification.

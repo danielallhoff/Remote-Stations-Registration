@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Cliente.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Cliente_localhost_UDDISecurityService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/juddiv3/services/security</Value>
+    </Setting>
+    <Setting Name="Cliente_JUDDIPublish_UDDIPublicationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/juddiv3/services/publish</Value>
+    </Setting>
+    <Setting Name="Cliente_JUDDInquiry_UDDIInquiryService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/juddiv3/services/inquiry</Value>
+    </Setting>
+    <Setting Name="Cliente_Estacion_Estacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/EstacionMaster/services/Estacion.EstacionHttpSoap11Endpoint/</Value>
+    </Setting>
+    <Setting Name="Cliente_SubscribeService_Subscribe" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/SubscribeMaster/services/Subscribe.SubscribeHttpSoap11Endpoint/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

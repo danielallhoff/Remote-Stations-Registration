@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://master" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://master" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://master">
+      <xs:element name="main">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="args" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obtenerNotificaciones">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obtenerNotificacionesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="notificar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="nombreEstacion" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="propiedad" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="val" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="min" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="max" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="notificarResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="notificarRequest">
+    <wsdl:part name="parameters" element="ns:notificar" />
+  </wsdl:message>
+  <wsdl:message name="notificarResponse">
+    <wsdl:part name="parameters" element="ns:notificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerNotificacionesRequest">
+    <wsdl:part name="parameters" element="ns:obtenerNotificaciones" />
+  </wsdl:message>
+  <wsdl:message name="obtenerNotificacionesResponse">
+    <wsdl:part name="parameters" element="ns:obtenerNotificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="mainRequest">
+    <wsdl:part name="parameters" element="ns:main" />
+  </wsdl:message>
+  <wsdl:portType name="SubscribePortType">
+    <wsdl:operation name="notificar">
+      <wsdl:input wsaw:Action="urn:notificar" message="ns:notificarRequest" />
+      <wsdl:output wsaw:Action="urn:notificarResponse" message="ns:notificarResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerNotificaciones">
+      <wsdl:input wsaw:Action="urn:obtenerNotificaciones" message="ns:obtenerNotificacionesRequest" />
+      <wsdl:output wsaw:Action="urn:obtenerNotificacionesResponse" message="ns:obtenerNotificacionesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="main">
+      <wsdl:input wsaw:Action="urn:main" message="ns:mainRequest" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SubscribeSoap11Binding" type="ns:SubscribePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="notificar">
+      <soap:operation soapAction="urn:notificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerNotificaciones">
+      <soap:operation soapAction="urn:obtenerNotificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="main">
+      <soap:operation soapAction="urn:main" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SubscribeSoap12Binding" type="ns:SubscribePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="notificar">
+      <soap12:operation soapAction="urn:notificar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerNotificaciones">
+      <soap12:operation soapAction="urn:obtenerNotificaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="main">
+      <soap12:operation soapAction="urn:main" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SubscribeHttpBinding" type="ns:SubscribePortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="notificar">
+      <http:operation location="notificar" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerNotificaciones">
+      <http:operation location="obtenerNotificaciones" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="main">
+      <http:operation location="main" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Subscribe">
+    <wsdl:port name="SubscribeHttpSoap11Endpoint" binding="ns:SubscribeSoap11Binding">
+      <soap:address location="http://localhost:8080/SubscribeMaster/services/Subscribe.SubscribeHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="SubscribeHttpSoap12Endpoint" binding="ns:SubscribeSoap12Binding">
+      <soap12:address location="http://localhost:8080/SubscribeMaster/services/Subscribe.SubscribeHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="SubscribeHttpEndpoint" binding="ns:SubscribeHttpBinding">
+      <http:address location="http://localhost:8080/SubscribeMaster/services/Subscribe.SubscribeHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
