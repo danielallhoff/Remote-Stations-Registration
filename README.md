@@ -1,6 +1,6 @@
 # Remote-Stations-Registration
 
-This project makes possible the remote registration of stations (callable services) with the use of a .NET interface and the UDDI technology. Moreover, security functions are implemented as: login hashing and communication encryption (client - station). Furthermore, it is possible to subscribe to stations for receiving notifications when specified changes happen.
+This project makes possible the remote registration of stations (callable services) with the use of a .NET interface and the UDDI technology. Moreover, security functionality is implemented as: login with hashing and communication encryption (client - station). Furthermore, it is possible to subscribe to stations for receiving notifications when specified changes happen.
 
 ## Main Client Interface
 
